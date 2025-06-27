@@ -100,7 +100,8 @@
 
 <div align="center">
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Rishikarpe&theme=dracula" height="150" alt="streak graph" />
-<img src="https://github-readme-stats.vercel.app/api?username=Rishikarpe&show_icons=true&theme=dracula" height="150" alt="stats graph" /></div>
+<img src="https://github-readme-stats.vercel.app/api?username=Rishikarpe&show_icons=true&theme=dracula" height="150" alt="stats graph" />
+</div>
 
 ###
 
