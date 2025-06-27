@@ -1,0 +1,28 @@
+name: Generate Pacman Contribution Graph
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: platane/snk@v3
+        with:
+          github_user_name: Rishikarpe
+          outputs: |
+            output/pacman-contribution-graph.svg
+            output/pacman-contribution-graph-dark.svg?palette=github-dark
+      - uses: actions/upload-artifact@v3
+        with:
+          name: contribution-graphs
+          path: output/
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/
+          git commit -m "Update contribution graphs" || echo "No changes to commit"
+          git push
